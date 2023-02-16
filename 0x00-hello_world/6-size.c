@@ -1,9 +1,11 @@
 #include <stdio.h>
+
 /**
-*main- Entry Point
+* main- Entry Point
 *
-*Return: Always 0 (Sucess)
+* Return: Always 0 (Sucess)
 */
+
 int main(void)
 {
 	printf("Size of a char: %ld byte(s)\n", sizeof(char));
@@ -11,5 +13,5 @@ int main(void)
 	printf("Size of a long int: %ld byte(s)\n", sizeof(long int));
 	printf("Size of a long long int: %ld byte(s)\n", sizeof(long long int));
 	printf("Size of a float: %ld byte(s)\n", sizeof(float));
-	return (0);
+	return (0); /* Returns 0 */
 }
