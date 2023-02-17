@@ -13,7 +13,7 @@
 	for (abc = 'a'; abc <= 'z'; abc++)
 	{
 		if (abc == 'e' || abc == 'q')
-		break;
+		continue;
 	}
 	{
 		putchar(abc);
