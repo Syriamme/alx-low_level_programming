@@ -16,10 +16,10 @@ int main(void)
 	{
 		putchar(abc);
 	}
-
 	for (ABC = 'A'; ABC <= 'Z'; ABC++)
 	{
 		putchar(ABC);
 	}
+	putchar('\n');
 	return (0);
 }
