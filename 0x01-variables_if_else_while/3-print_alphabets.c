@@ -12,10 +12,11 @@ int main(void)
 	int ABC;
 
 	for (abc = 'a'; abc <= 'z'; abc++)
+
 	{
 		putchar(abc);
 	}
-		putchar('\n');
+	putchar('\n');
 
 	for (ABC = 'A'; ABC <= 'Z'; ABC++)
 	{
