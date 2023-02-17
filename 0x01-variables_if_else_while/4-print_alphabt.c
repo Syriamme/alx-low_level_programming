@@ -12,11 +12,11 @@
 
 	for (abc = 'a'; abc <= 'z'; abc++)
 	{
-		if (abc == 'e' || abc == 'q')
-		continue;
+	if (abc == 'e' || abc == 'q')
+	{continue;
 	}
-	{
-		putchar(abc);
+	putchar(abc);
 	}
-		return (0);
+	putchar('\n');
+	return (0);
 }
