@@ -23,7 +23,7 @@ int main(void)
 					putchar(' ');
 					putchar(k);
 					putchar(p);
-					if (!((m == '9' && x == '8') && (k == '9' && p == '9')))
+					if (!((m == '9' && x == '9') && (k == '9' && p == '9')))
 					{
 						putchar(',');
 						putchar(' ');
