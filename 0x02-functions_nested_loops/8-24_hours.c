@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * jack_bauer - Prints every minute of the day
- * Description: Prints from 00:00 to 23:59
+ * jack_bauer - Printing every minute of the day
+ * Description: Printing from 00:00 to 23:59
  */
 
 void jack_bauer(void)
