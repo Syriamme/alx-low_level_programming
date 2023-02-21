@@ -1,21 +1,20 @@
 #include "main.h"
 
 /**
-*main - Entry Point
-*
-*Return: Void
-*/
+ * print_alphabet - Function to list alphabets
+ * Return: Does not return any value(s)
+ */
 
 void print_alphabet(void)
-
 {
-	char a;
+	char ch;
 
-	for (a = 'a'; a <= 'z'; a++)
+	ch = 'a';
 
+	while (ch <= 'z')
 	{
-		_putchar(a);
+		_putchar(ch);
+		ch++;
 	}
-
 	_putchar('\n');
 }
