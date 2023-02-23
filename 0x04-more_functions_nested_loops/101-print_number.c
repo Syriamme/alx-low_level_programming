@@ -1,15 +1,15 @@
 #include "main.h"
 
 /**
-* print_number - prints an integer.
-* @n: input integer.
-* Return: void.
+*print_number - prints an integer.
+*@n: input integer.
+*Return: void.
 */
 
 void print_number(int n)
 {
 	unsigned int m, d, count;
-	
+
 	if (n < 0)
 	{
 		_putchar(45);
