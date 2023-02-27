@@ -12,12 +12,13 @@ void print_rev(char *s)
 	int len = 0;
 	int i;
 
-	while (s[len] != '\0')
+	while (*s != '\0')
 	{
+		s++
 		len++;
 	}
-	for (int i = len - 1; i >= 0; i--)
+	for (i = len; i > 0; i--)
 	{
-		_putchar(s[i]);
+		_putchar(*s);
 	}
-}
+}icc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 4-main.c 4-print_rev.c -o 4-print_revi
