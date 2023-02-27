@@ -17,8 +17,10 @@ void print_rev(char *s)
 		s++
 		len++;
 	}
+	s--;
 	for (i = len; i > 0; i--)
 	{
 		_putchar(*s);
+		s--
 	}
 }icc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 4-main.c 4-print_rev.c -o 4-print_revi
