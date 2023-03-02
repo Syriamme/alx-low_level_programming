@@ -2,11 +2,14 @@
 
 /**
  *_strncat - a function that concatenates two strings
+ *
  *@dest: destination
  *@src: source
- *@n: Interger
+ *@n: interger
+ *
  *Return: dest
 */
+
 char *_strncat(char *dest, const  char *src, int n)
 {
 	int dest_len = strlen(dest);
