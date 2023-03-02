@@ -6,23 +6,21 @@
  * Return: dest.
  */
 
-char *leet(char *s)
+char *leet(char *str)
 {
-	int count = 0, i;
-	int low_letters[] = {97, 101, 111, 116, 108};
-	int upp_letters[] = {65, 69, 79, 84, 76};
-	int numbers[] = {52, 51, 48, 55, 49};
+	int a[11] = {'a', 'A', 'e', 'E', 'o', 'O', 't', 'T', 'l', 'L'};
+	int b[11] = {'4', '4', '3', '3', '0', '0', '7', '7', '1', '1'};
+	int index, index2;
 
-	while (*(s + count) != '\0')
+	for (index = 0; str[index] != '\0'; index++)
 	{
-		for (i = 0; i < 5; i++)
+		for (index2 = 0; a[index2] != '\0'; index2++)
 		{
-			if (*(s + count) == low_letters[i] || *(s + count) == upp_letters[i])
+			if (str[index] == a[index2])
 			{
-				*(s + count) = numbers[i];
-				break;
+				str[index] = b[index2];
 			}
 		}
-		count++;
 	}
-	return (s);
+	return (str);
+}
