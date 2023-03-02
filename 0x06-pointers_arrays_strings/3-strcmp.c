@@ -4,7 +4,7 @@
  * _strcmp - a function that compares two strings
  * @s1: string one
  * @s2: string two
- * Return: s1-s2, otherwise 0
+ * Return: if equal s1-s2, otherwise 0
  */
 int _strcmp(char *s1, char *s2)
 {
@@ -16,7 +16,6 @@ int _strcmp(char *s1, char *s2)
 		{
 			return (s1[i] - s2[i]);
 		}
-		return (0);
 	}
+	return (s1[i] - s2[i]);
 }
-
