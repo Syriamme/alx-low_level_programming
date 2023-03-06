@@ -1,8 +1,10 @@
 #include "main.h"
+
 /**
  *print_chessboard - printing a chessboard
  *@a: a two dimensional array
  */
+
 void print_chessboard(char (*a)[8])
 {
 	int row, col;
@@ -11,8 +13,8 @@ void print_chessboard(char (*a)[8])
 	{
 		for (col = 0; col < 8; col++)
 		{
-			_putchar ("%c ", a[row][col]);
+			_putchar(a[row][col]);
 		}
-		_putchar ("\n");
+		_putchar('\n');
 	}
 }
