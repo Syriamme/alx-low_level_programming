@@ -10,7 +10,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i, j;
-	unsigned int same = 0;
+	unsigned int matches = 0;
 
 	for (i = 0; accept[i] != '\0'; i++)
 	{
@@ -18,10 +18,10 @@ unsigned int _strspn(char *s, char *accept)
 		{
 			if (accept[i] == s[j])
 			{
-				same++;
+				matches++;
 				break;
 			}
 		}
 	}
-	return (same);
+	return (matches);
 }
