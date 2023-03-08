@@ -14,9 +14,9 @@ int find_root(int n, int rt)
 		return (-1);
 	}
 	if ((rt * rt) == n)
-			{
-			return (rt);
-			}
+	{
+		return (rt);
+	}
 	return (find_root(n, rt + 1));
 }
 
