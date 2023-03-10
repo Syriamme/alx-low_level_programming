@@ -1,35 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
- * main - Entry Point
- * @argc: Argument Count
- * @argv: Argument Vector
- * Return: Always 0 (Success)
+ *main- Entry Point
+ *@argc: argument counter
+ *@argv: argument vector
+ *Return: Always Zero
  */
 
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i, j, sum = 0;
 
-	sum = 0;
-
-	if (argc <= 1)
+	if (argc == 1)
 	{
 		printf("0\n");
 		return (0);
 	}
+
 	for (i = 1; i < argc; i++)
 	{
-		if (atoi(argv[i]) == 0)
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			printf("Error\n");
-			return (1);
+			if (!isdigit(argv[i][j]))
+			{
+				printf("Error\n");
+				return (1);
+			}
 		}
-	}
-	for (i = 1; i < argc; i++)
-	{
-		sum += (atoi(argv[i]));
+		sum += atoi(argv[i]);
 	}
 	printf("%d\n", sum);
 	return (0);
