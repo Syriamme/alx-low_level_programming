@@ -3,6 +3,7 @@
 /**
  *create_array - a function that creates an array of chars
  *@c: character
+ *@size: size of array
  *Return: Pointer of an array
  */
 
@@ -20,7 +21,6 @@ char *create_array(unsigned int size, char c)
 	{
 		ptr[i] = c;
 	}
-	
 	if (ptr == NULL)
 	{
 		return (NULL);
