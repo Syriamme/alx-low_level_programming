@@ -1,1 +1,1 @@
-Structurs and typedef in C alx-Holberton
+Structures typedef in c
