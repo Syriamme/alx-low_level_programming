@@ -28,37 +28,41 @@ unsigned int _strlen(const char * const format)
  * @format: variable's format to display
  */
 
-void print_all(const char * const format, ...) {
-    va_list args;
-    va_start(args, format);
-    
-    const char *ptr = format;
-    int i_var;
-    float f_var;
-    char c_var;
-    char *s_var;
-    
-    while (*ptr) {
-        if (*ptr == 'c') {
-            c_var = (char)va_arg(args, int);
-            printf("%c", c_var);
-        }
-        if (*ptr == 'i') {
-            i_var = va_arg(args, int);
-            printf("%d", i_var);
-        }
-        if (*ptr == 'f') {
-            f_var = (float)va_arg(args, double);
-            printf("%f", f_var);
-        }
-        if (*ptr == 's') {
-            s_var = va_arg(args, char *);
-            printf("%s", s_var ? s_var : "(nil)");
-        }
-        
-        ptr++;
-    }
-    
-    printf("\n");
-    va_end(args);
+void print_all(const char * const format, ...)
+{
+	va_list args;
+	char c;
+	int i;
+	float f;
+	char *s;
+	const char *ptr;
+	va_start(args, format);
+	ptr = format;
+	
+	while (*ptr != '\0')
+	{
+		if (*ptr == 'c')
+		{
+			c = (char)va_arg(args, int);
+			printf("%c ", c);
+		}
+		if (*ptr == 'i')
+		{
+			i = va_arg(args, int);
+			printf("%d ", i);
+		}
+		if (*ptr == 'f')
+		{
+			f = (float)va_arg(args, double);
+			printf("%f ", f);
+		}
+		if (*ptr == 's')
+		{
+			s = va_arg(args, char *);
+			printf("%s ", s ? s : "(nil)");
+		}
+		ptr++;
+	}
+	printf("\n");
+	va_end(args);
 }
