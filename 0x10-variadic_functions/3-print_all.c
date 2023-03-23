@@ -22,8 +22,9 @@ unsigned int _strlen(const char * const format)
 }
 
 #include "variadic_functions.h"
+
 /**
- * print_all - prints anything
+i * print_all - prints anything
  *
  * @format: variable's format to display
  */
@@ -46,12 +47,12 @@ void print_all(const char * const format, ...)
 			c = (char)va_arg(args, int);
 			printf("%c ", c);
 		}
-		if (*ptr == 'i')
+		else if (*ptr == 'i')
 		{
 			i = va_arg(args, int);
 			printf("%d ", i);
 		}
-		if (*ptr == 'f')
+		else if (*ptr == 'f')
 		{
 			f = (float)va_arg(args, double);
 			printf("%f ", f);
@@ -60,6 +61,10 @@ void print_all(const char * const format, ...)
 		{
 			s = va_arg(args, char *);
 			printf("%s ", s ? s : "(nil)");
+		}
+		if (*(ptr + 1) != '\0' && (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's'))
+		{
+			printf(", ");
 		}
 		ptr++;
 	}
