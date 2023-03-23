@@ -1,73 +1,51 @@
+#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <stddef.h>
 
 /**
- * _strlen - string's size
- *
- * @format: string parameter
- *
- * Return: unsigned integer
- */
-unsigned int _strlen(const char * const format)
-{
-	unsigned int size = 0;
-
-	while (format[size])
-	{
-		size++;
-	}
-
-	return (size);
-}
-
-#include "variadic_functions.h"
-
-/**
-i * print_all - prints anything
- *
- * @format: variable's format to display
+ * print_all - prints anything
+ * @format: list of types of arguments passed to the function
  */
 
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	char c;
-	int i;
-	float f;
-	char *s;
-	const char *ptr;
-	va_start(args, format);
-	ptr = format;
-	
-	while (*ptr != '\0')
+	int i = 0;
+	char *str, *sep = "";
+
+	va_list list;
+
+	va_start(list, format);
+
+	if (format)
 	{
-		if (*ptr == 'c')
+		while (format[i])
 		{
-			c = (char)va_arg(args, int);
-			printf("%c ", c);
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", sep, va_arg(list, int));
+					break;
+				case 'i':
+					printf("%s%d", sep, va_arg(list, int));
+					break;
+				case 'f':
+					printf("%s%f", sep, va_arg(list, double));
+					break;
+				case 's':
+					str = va_arg(list, char *);
+					if (!str)
+						str = "(nil)";
+					printf("%s%s", sep, str);
+					break;
+				default:
+					i++;
+					continue;
+			}
+			sep = ", ";
+			i++;
 		}
-		else if (*ptr == 'i')
-		{
-			i = va_arg(args, int);
-			printf("%d ", i);
-		}
-		else if (*ptr == 'f')
-		{
-			f = (float)va_arg(args, double);
-			printf("%f ", f);
-		}
-		if (*ptr == 's')
-		{
-			s = va_arg(args, char *);
-			printf("%s ", s ? s : "(nil)");
-		}
-		if (*(ptr + 1) != '\0' && (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's'))
-		{
-			printf(", ");
-		}
-		ptr++;
 	}
+
 	printf("\n");
-	va_end(args);
+	va_end(list);
 }
