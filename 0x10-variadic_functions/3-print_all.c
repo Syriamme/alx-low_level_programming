@@ -1,105 +1,64 @@
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
-#include "variadic_functions.h"
+#include <stddef.h>
 
+/**
+ * _strlen - string's size
+ *
+ * @format: string parameter
+ *
+ * Return: unsigned integer
+ */
+unsigned int _strlen(const char * const format)
+{
+	unsigned int size = 0;
+
+	while (format[size])
+	{
+		size++;
+	}
+
+	return (size);
+}
+
+#include "variadic_functions.h"
 /**
  * print_all - prints anything
  *
- * @format: a list of types of arguements passed to the function
- *
- * Return: Void, nothing
+ * @format: variable's format to display
  */
 
-void print_all(const char * const format, ...)
-{
-	identifier ids[] = {
-		{"c", print_c},
-		{"i", print_i},
-		{"f", print_f},
-		{"s", print_s},
-		{NULL, NULL}
-	};
-	va_list args;
-	int i, j;
-	char *separator = "";
-
-	va_start(args, format);
-
-	i = 0;
-
-	while (format && format[i])
-	{
-		j = 0;
-
-		while (ids[j].format)
-		{
-			if (*ids[j].format == format[i])
-			{
-				printf("%s", separator);
-				ids[j].print(args);
-				separator = ", ";
-			}
-			j++;
-		}
-		i++;
-	}
-
-	printf("\n");
-	va_end(args);
-}
-
-/**
- * print_c - prints a character
- *
- * @list: va_list
- *
- */
-
-void print_c(va_list list)
-{
-	printf("%c", va_arg(list, int));
-}
-
-/**
- * print_i - prints an integer
- *
- * @list: va_list
- *
- */
-
-void print_i(va_list list)
-{
-	printf("%d", va_arg(list, int));
-}
-
-/**
- * print_f - prints an integer
- *
- * @list: va_list
- *
- */
-
-void print_f(va_list list)
-{
-	printf("%f", va_arg(list, double));
-}
-
-/**
- * print_s - prints a string
- *
- * @list: va_list
- *
- */
-
-void print_s(va_list list)
-{
-	char *str;
-
-	str = va_arg(list, char *);
-
-	if (str == NULL)
-		str = "(nil)";
-
-	printf("%s", str);
+void print_all(const char * const format, ...) {
+    va_list args;
+    va_start(args, format);
+    
+    const char *ptr = format;
+    int i_var;
+    float f_var;
+    char c_var;
+    char *s_var;
+    
+    while (*ptr) {
+        if (*ptr == 'c') {
+            c_var = (char)va_arg(args, int);
+            printf("%c", c_var);
+        }
+        if (*ptr == 'i') {
+            i_var = va_arg(args, int);
+            printf("%d", i_var);
+        }
+        if (*ptr == 'f') {
+            f_var = (float)va_arg(args, double);
+            printf("%f", f_var);
+        }
+        if (*ptr == 's') {
+            s_var = va_arg(args, char *);
+            printf("%s", s_var ? s_var : "(nil)");
+        }
+        
+        ptr++;
+    }
+    
+    printf("\n");
+    va_end(args);
 }
