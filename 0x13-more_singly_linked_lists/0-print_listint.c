@@ -3,8 +3,8 @@
 #include "lists.h"
 
 /**
- *print_listint_ a function that prints all elements
- *@lisint: The linked list
+ *print_listint - a function that prints all elements
+ *@h: head of list
  *Return: the number of nodes
  */
 size_t print_listint(const listint_t *h)
