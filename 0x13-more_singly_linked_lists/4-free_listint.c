@@ -4,7 +4,7 @@
 
 /**
  *free_listint- A function that frees a list
- *@head - pointer to the list head
+ *@head: pointer to the list head
  *Return: Always 0 (success)
  */
 void free_listint(listint_t *head)
@@ -15,6 +15,6 @@ void free_listint(listint_t *head)
 	{
 		tp = head;
 		head = head->next;
-		free (tp);
+		free(tp);
 	}
 }
