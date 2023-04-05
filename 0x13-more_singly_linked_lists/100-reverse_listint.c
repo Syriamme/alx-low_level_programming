@@ -17,10 +17,11 @@ listint_t *reverse_listint(listint_t **head)
 	{
 		after = (**head).next;
 		(**head).next = pre;
-		
+
 		pre = *head;
 		*head = after;
 	}
 	*head = pre;
-	return(*head);
+
+	return (*head);
 }
