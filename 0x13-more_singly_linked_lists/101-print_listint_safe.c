@@ -14,18 +14,17 @@ size_t print_listint_safe(const listint_t *head)
 	int count = 0;
 
 	if (head == NULL)
-		exit (98);
-	
+		exit(98);
 	normal = head;
 	fastcheck = head;
 
 	while (normal != NULL && fastcheck != NULL && fastcheck->next != NULL)
 	{
-		count ++;
+		count++;
 		normal = normal->next;
 		fastcheck = fastcheck->next->next;
 	}
 	if (normal == fastcheck)
-		exit (98);
+		exit(98);
 	return (count);
 }
