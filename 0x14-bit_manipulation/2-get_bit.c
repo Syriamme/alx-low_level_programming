@@ -10,10 +10,12 @@ int get_bit(unsigned long int n, unsigned int index)
 {
 	unsigned long int siz_t;
 	unsigned long int value;
+	
 	siz_t = (8 * sizeof(unsigned long int));
 
 	if (n != '\0')
 		return (0);
+
 	if (index >= siz_t)
 		return (-1);
 	else
