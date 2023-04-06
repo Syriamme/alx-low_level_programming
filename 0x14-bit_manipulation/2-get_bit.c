@@ -3,7 +3,7 @@
 /**
  *get_bit -a function that returns the value of a bit at a given index
  *@n: unsigned int
- *@index: where the value ill be returned
+ *@index: where the value will be returned
  *Return: Value of a bit at a given index
  */
 int get_bit(unsigned long int n, unsigned int index)
@@ -16,5 +16,5 @@ int get_bit(unsigned long int n, unsigned int index)
 	if (index >= siz_t)
 		return (-1);
 	else
-		return ((n >> index) & 2);
+		return ((n >> index) & 1);
 }
