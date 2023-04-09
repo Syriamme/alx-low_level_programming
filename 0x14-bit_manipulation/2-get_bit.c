@@ -15,7 +15,6 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	if (index >= siz_t * 8)
 		return (-1);
-	else if
 	{
 		mask = n >> index;
 		value = ((mask) & 1);
