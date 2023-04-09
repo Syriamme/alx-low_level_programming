@@ -9,12 +9,15 @@
 int set_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned int siz_t;
-	unsigned int num; 
-	siz_t = (4 * sizeof(unsigned long int));
+	unsigned long int bitmask;
+
+	siz_t = (8 * sizeof(unsigned long int));
 	
-	if (!n && index >= siz_t)
+	if (index >= siz_t)
 		return (-1);
-	
-	num = *n |= 1UL << index;
-	return (num);	
+	{
+		bitmask = 1 << index;
+		*n = (*n | bitmask);
+		return (1);
+	}	
 }

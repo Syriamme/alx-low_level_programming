@@ -13,7 +13,7 @@ int get_bit(unsigned long int n, unsigned int index)
 
 	siz_t = (8 * sizeof(unsigned long int));
 
-	if (index >= siz_t * 8)
+	if (index >= siz_t)
 		return (-1);
 	{
 		mask = n >> index;
