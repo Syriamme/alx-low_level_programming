@@ -29,9 +29,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	bytes = fwrite(buffer, 1, all, stdout);
-	if (bytes != all)
+	if (all != bytes)
 	{
 		return (0);
 	}
+	fclose(ptr);
 	return (bytes);
 }
