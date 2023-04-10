@@ -20,8 +20,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buffer = malloc(letters);
 	if (!buffer)
 	{
-		fclose(ptr);
-		free(buffer);
 		return (0);
 	}
 	all = fread(buffer, 1, letters, ptr);
@@ -32,8 +30,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	bytes = fwrite(buffer, 1, all, stdout);
 
-	{
-		return (bytes);
-	}
-	return (0);
+	if (all == bytes)
+		fclose(ptr);
+	free (buffer);
+	return (bytes);
 }
