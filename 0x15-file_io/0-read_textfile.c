@@ -31,7 +31,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	bytes = fwrite(buffer, 1, all, stdout);
 	if (bytes != all)
 	{
-		return (0)
+		return (0);
 	}
 	return (bytes);
 }
