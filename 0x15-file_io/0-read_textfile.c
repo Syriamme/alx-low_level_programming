@@ -1,8 +1,8 @@
 #include "main.h"
 /**
  *read_textfile -  a function that reads a file
- *@filename: name of the file
- *@size_t letters: the number of letters
+ *@filename:name of the file
+ *@letters:number of letters
  *Return: number of letters
  */
 ssize_t read_textfile(const char *filename, size_t letters)
@@ -11,12 +11,12 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	size_t all, bytes;
 
 	FILE *ptr = fopen(filename, "r");
-	
+
 	if (!filename)
 		return (0);
 	if (!ptr)
 		return (0);
-	
+
 	buffer = malloc(letters);
 	if (!buffer)
 	{
