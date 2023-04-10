@@ -8,7 +8,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer;
-	size_t all, bytes;
+	ssize_t all, bytes;
 
 	FILE *ptr = fopen(filename, "r");
 
