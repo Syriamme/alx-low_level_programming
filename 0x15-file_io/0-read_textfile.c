@@ -29,6 +29,5 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	bytes = fwrite(buffer, 1, all, stdout);
 
-	fclose(ptr);
 	return (bytes);
 }
