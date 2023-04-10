@@ -23,7 +23,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	}
 	all = fread(buffer, 1, letters, ptr);
-	fclose(ptr);
 	if (all == 0)
 	{
 		return (0);
