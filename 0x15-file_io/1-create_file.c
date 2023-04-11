@@ -10,12 +10,12 @@ int create_file(const char *filename, char *text_content)
 {
 	int len = 0, check = 0;
 	FILE *ptr;
-	
+
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	
+
 	ptr = fopen(filename, "w");
 	if (!ptr)
 	{
@@ -36,5 +36,4 @@ int create_file(const char *filename, char *text_content)
 	}
 	fclose(ptr);
 	return (1);
-}
-			
+}			
