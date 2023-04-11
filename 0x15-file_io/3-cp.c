@@ -16,13 +16,13 @@ int main(int argc, char *arg[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-	file_cop = fopen(arg[1], "r");
+	file_cop = fopen(arg[1], "rb");
 	if (file_cop == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg[1]);
 		return (-98);
 	}
-	file_pas = fopen(arg[2], "w");
+	file_pas = fopen(arg[2], "wb");
 	if (file_cop == NULL)
 	{
 		return (-98);
