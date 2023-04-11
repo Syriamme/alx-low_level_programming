@@ -22,7 +22,7 @@ int main(int argc, char *arg[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg[1]);
 		return (-98);
 	}
-	file_pas = fopen(arg[2], "r");
+	file_pas = fopen(arg[2], "w");
 	if (file_cop == NULL)
 	{
 		return (-98);
@@ -36,12 +36,12 @@ int main(int argc, char *arg[])
 			exit(99);
 		}
 	}
-	if (fclose(file_cop) == -1)
+	if (ferror(file_cop))
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
-		return (100);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %sn", arg[1]);
+		exit(98);
 	}
-	if (fclose(file_pas) == -1)
+	if (fclose(file_cop) == -1 || fclose(file_pas) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
 		return (100);
