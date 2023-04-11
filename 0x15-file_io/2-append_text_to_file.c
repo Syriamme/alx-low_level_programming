@@ -10,24 +10,25 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int add = 0, check = 0;
 	FILE *ptr = fopen(filename, "a");
+
 	if (!ptr)
 	{
 		return (-1);
 	}
-	
+
 	if (filename == NULL)
 	{
 		return (-1);
 	}
-	
+
 	if (text_content != 0)
 	{
-		while (text_content [add] != '\0')
+		while (text_content[add] != '\0')
 		{
 			add++;
 		}
 		check = fwrite(text_content, sizeof(char), add, ptr);
-		if(check != add)
+		if (check != add)
 		{
 			fclose(ptr);
 			return (-1);
@@ -36,3 +37,4 @@ int append_text_to_file(const char *filename, char *text_content)
 		fclose(ptr);
 		return (1);
 }
+
