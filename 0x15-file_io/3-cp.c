@@ -1,12 +1,11 @@
 #include "main.h"
-
 /**
  *main-  a function that copies content from one file to another
  *@argc: argument count
- *argv: argument as string
+ *@arg: argument as string
  *Return: Always 0 (success)
- */
-int main (int argc, char *arg[])
+*/
+int main(int argc, char *arg[])
 {
 	FILE *file_cop, *file_pas;
 	char buffer[1024];
@@ -15,9 +14,8 @@ int main (int argc, char *arg[])
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit (97);
+		exit(97);
 	}
-
 	file_cop = fopen(arg[1], "r");
 	if (file_cop == NULL)
 	{
@@ -35,13 +33,8 @@ int main (int argc, char *arg[])
 		if (bytesw != bytesr)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", arg[2]);
-			exit (99);
+			exit(99);
 		}
-	}
-	if (bytesr == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", arg[1]);
-		return (98);
 	}
 	if (fclose(file_cop) == -1)
 	{
