@@ -41,7 +41,7 @@ int main(int argc, char *arg[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %sn", arg[1]);
 		exit(98);
 	}
-	if (fclose(file_cop) == -1 || fclose(file_pas) == -1)
+	if (fclose(file_cop) == EOF || fclose(file_pas) == EOF)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n");
 		return (100);
