@@ -28,7 +28,7 @@ int create_file(const char *filename, char *text_content)
 			len++;
 		}
 		check = fwrite(text_content, sizeof(char), len, ptr);
-		if (check == 1)
+		if (check != len)
 		{
 			fclose(ptr);
 			return (-1);
